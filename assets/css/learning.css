@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400|Poppins:600');
 
 *{
     padding: 0;
@@ -5,6 +6,16 @@
     text-decoration: 0;
     box-sizing: border-box;
 }
+
+html {font-size: 100%;} /*16px*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #0f2d41;
+}
+
 html, body{
     width: 100%;
     height: 100%;
@@ -12,10 +23,37 @@ html, body{
     overflow-y: hidden;
 }
 
-body h3{
-    width: 80%;
-    margin: 0 auto 16px auto;
+p {margin-bottom: 1rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #2F73A1;
 }
+
+h1 {
+    width: 80%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.488rem;
+}
+
+h2 {font-size: 2.074rem;}
+
+h3 {font-size: 1.728rem;}
+
+h4 {font-size: 1.44rem;}
+
+h5 {font-size: 1.2rem;}
+
+small, .text_small {font-size: 0.833rem;}
+span.extra {
+    color: #f7465d;
+}
+
 body .mainbox{
     width: 80%;
     height: 80%;
@@ -24,31 +62,68 @@ body .mainbox{
     background-color: #f2f5f7;
 }
 .mainbox .inner-mainbox{
-    /* gap: 16px; */
     width: 100%;
+    padding-left: 16px;
 }
 
-.inner-mainbox .text{
+.inner-mainbox .frontend{
     width: 90%;
     padding: 16px;
     margin-left: 16px;
 }
 
-.inner-mainbox .text > li{
+.inner-mainbox .frontend > li{
     width: 100%;
     margin-bottom: 32px;
 }
 
-.inner-mainbox .text > li > div{
+.inner-mainbox .frontend > li > div{
     width: 100%;
 }
 
-.text > li > div > * {
+.frontend > li > div > * {
     width: 100%;
+    height: auto;
 }
 
-.text .styleblock{
-    width: 80%;
+
+.tags-block .tags-def{
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.tags-block .tags-def .definite {
+    width: 70%;
+    height: 645px;
+    padding: 16px;
+    color: #f2f5f7;
+    background-color: #214055;
+}
+
+.tags-block .tags-def .definite > div{
+    width: 100%;
+    height: 100%;
+    padding: 16px 0;
+    overflow-y: scroll;
+}
+
+
+.tags-block .tags-def .definite > div div:not(:first-child){
+    margin-top: 16px;
+    padding-left: 24px;
+}
+
+.tags-block .tags-def .definite div{}
+
+
+.frontend .styleblock, 
+.frontend .eg-inner{
+    width: 90%;
     display: flex; 
     align-items: stretch;
     justify-content: flex-start;
@@ -56,25 +131,44 @@ body .mainbox{
     gap: 24px;
 }
 
-.text .styleblock > div{
+.frontend .rowblocks{
+    gap: 16px 8px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px auto;
+}
+
+
+.frontend .codeblocks{
     padding: 16px;
     display: flex;
-    justify-content: center;
-    width: calc(100% / 3);
     color: #f2f5f7;
+    margin: 0 auto;
     border-radius: 4px;
+    width: calc(100% / 3);
+    justify-content: center;
     background-color: #214055;
 }
 
-.styleblock > div pre{
+.frontend .rowblocks .codeblocks{
+    width: calc( (100% / 3) - 16px );
+}
+
+div > pre.codeblock{
     width: 100%;
     white-space: pre;
     /* overflow-x: auto; */
 }
 
-.styleblock > div pre code{
+div > pre.codeblock code{
     font-size: 14px;
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+.frontend .style-example{
+    width: 100%;
+    margin: 16px auto;
 }
 
 
