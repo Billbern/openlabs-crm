@@ -1,0 +1,23 @@
+{
+  "name": "opl-crm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billbern/openlabs-crm.git"
+  },
+  "author": "opl-takoradi-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billbern/openlabs-crm/issues"
+  },
+  "homepage": "https://github.com/Billbern/openlabs-crm#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
