@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400|PT+Sans:600');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {font-size: 100%;} /*16px*/
+
+
+html, body{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p {margin-bottom: 1rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {font-size: 2.441rem;}
+
+h3 {font-size: 1.953rem;}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+small, .text_small {font-size: 0.8rem;}
+
+body .auth-main{
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    gap: 0 16px;
+}
+
+.auth-main .auth-form{
+    display: flex;
+    grid-column: 1/4;
+    padding-top: 96px;
+    padding-left: 16px;
+    justify-content: center;
+}
+
+
+.register .auth-form{
+    background-color: #0060ac;
+    position: relative;
+}
+
+
+.auth-main .auth-form > div{
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+}
+.register .auth-form > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/learning/register-bg.svg');
+    background-size: 100%;
+    left: 0;
+    top: 0;
+}
+
+.auth-form > div h2{
+    color: #1d2c3a;
+}
+
+.auth-main .auth-image > div {
+    position: relative;
+}
+
+.auth-main .auth-image .floater-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 512px;
+    background-image: url('../img/learning/register-bg.svg');
+    background-size: 100%;
+}
+
+
+.register .auth-image > div h2{
+    color: #1d2c3a;
+}
+
+
+.auth-form form input, 
+.register .auth-image form input{
+    width: 100%;
+    height: 44px;
+    color: #555;
+    padding: 0 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    background-color: #fef1e9;
+    border-color: transparent;
+}
+
+.auth-form form input[type=password]{
+    margin-bottom: 8px;
+}
+
+.auth-form form input:focus{
+    outline-color: #f37122;
+}
+
+.auth-form form input[type=submit],
+.register .auth-image form input[type=submit]{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    background-color: #f37122;
+}
+
+.register .auth-image form select{
+    width: 100%;
+    color: #555;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    background-color: #fef1e9;
+    border: 1px solid rgba(85, 85, 85, 0.35);
+}
+
+.auth-image form option{
+    color: #555;
+}
+
+.auth-form form p, 
+.register .auth-image form p{
+    color: #555;
+}
+
+.auth-form form p.left-side{
+    text-align: left;
+}
+
+.auth-form form p > a,
+.register .auth-image form p > a{
+    color: #f37122;
+    text-decoration: none;
+}
+
+.auth-main .auth-image{
+    height: 100%;
+    display: flex;
+    padding: 16px;
+    grid-column: 4/13;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #0060ac;
+}
+
+
+.register .auth-image{
+    background-color: #fff;
+}
+
+.auth-image > div:first-child{
+    width: 100%;
+    color: #fff;
+    padding: 70px 32px;
+}
+
+.auth-image > div:first-child p{
+    width: 50%;
+}
+
+.register .auth-image form p{
+    width: 100%;
+}
+
+.auth-image > div:first-child > div{
+    width: calc( 100% / 3);
+}
+
+.auth-image > div:last-child {
+    width: 100%;
+    text-align: right;
+    justify-self: flex-end;
+    position: relative;
+}
+
+.register .auth-image > div:last-child > div{
+    position: absolute;
+    bottom: 24px;
+    right: 20px;
+}
+
+.auth-image .image-svg{
+    transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.auth-image .image-svg svg{
+    width: auto;
+    height: 384px;
+    object-fit: contain;
+    -o-object-fit: contain;
+    object-position: center;
+    -o-object-position: center;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
