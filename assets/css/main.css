@@ -321,8 +321,8 @@ form .po-form .ql-container{
 }
 
 
-.job-form  form input[type=submit],
-.job-form  form input[type=button]{
+.job-form  form .cancel-btn,
+.job-form  form .submit-btn{
     border: none;
     color: #fff;
     padding: 10px 16px;
@@ -334,12 +334,12 @@ form .po-form .ql-container{
     -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.35);
 }
 
-.job-form  form input[type=button]{
+.job-form  form .cancel-btn{
     background-color: red;
     left: 183px;
 }
 
-.job-form  form input[type=submit]{
+.job-form  form .submit-btn{
     background-color: #0060ac;
     right: 157px;
 }
