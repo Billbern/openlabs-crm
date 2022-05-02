@@ -214,7 +214,7 @@ body .dash-head{
 
 .dash-body .body-main > div{
     width: 100%;
-    height: 100%;
+    height: 63%;
     padding-top: 48px;
     grid-column: 3/11;
 }
@@ -247,7 +247,8 @@ body .dash-head{
     height: 100%;
 }
 
-.body-main .jobs-area{
+.body-main .jobs-area > div{
+    height: 40%;
     overflow-y: scroll;
     scrollbar-width: thin;
 }
