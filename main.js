@@ -25,12 +25,18 @@ app.get("/documentation", (req, res)=>{
     res.render("index")
 })
 
+app.get('/', (req, res)=>{
+    if(true){
+        res.redirect('/auth/login')
+    }
+})
+
 // all other routes
 app.get("*", (req, res)=>{
     res.render("404_page", { title: 'User'})
 })
 
 
-app.listen(3000, ()=>{
+app.listen(port, '0.0.0.0', ()=>{
     console.log(`Server is running on http://localhost:${port}\nfor the docs page visit http://localhost:${port}/documentation`)
 })
