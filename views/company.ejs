@@ -67,7 +67,7 @@
                                     <svg width="16"  viewBox="0 0 48 24" xmlns="http://www.w3.org/2000/svg"><path d="M48 0H0l12 12 12 12 12-12z" fill="#f37122" paint-order="stroke fill markers"/></svg>
                                 </span>
                             </button>
-                            <button>
+                            <button id="formpopup">
                                 <svg  height="16" fill="#fff" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M.044 8.002a.838.839 89.192 01.84-.84H7.16L7.16.887a.84.84 89.192 011.679 0V7.16l6.278-.002a.84.84 89.192 010 1.678H8.84l.003 6.276a.84.84 89.192 01-1.68 0V8.839l-6.278.003a.838.839 89.192 01-.84-.839z"/></svg>
                             </button>
                         </div>
@@ -98,7 +98,8 @@
                     </div>
                 </div>
             </div>
-            <div class="job-form">
+            <!-- Form for entering job details -->
+            <div class="job-form deactivate" id="jobForm">
                 <div>
                     <form action="" method="post">
                         <div class="bi-form">
@@ -123,9 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="">
-                                <input type="text" name="" id="">
-                            </div> -->
+                            
                         </div>
                         <div class="po-form">
                             <h5>About the position</h5>
@@ -201,8 +200,8 @@
                                 </div>                                
                             </div>
                         </div>
-                            <input type="button" value="cancel">
-                            <input type="submit" value="Create Job">
+                            <input type="button" value="cancel" id="removeForm">
+                            <input type="button" value="Create Job">
                     </form>
                 </div>
             </div>
@@ -211,14 +210,28 @@
     <script src="/js/quill.min.js"></script>
     <script>
         document.body.onload = () => {
-            let quill = new Quill('#quillEditor', {
-                modules: {
-                  syntax: true,
-                  toolbar: '#quillToolbar'
-                },
-                placeholder: 'Compose an epic...',
-                theme: 'snow'
-              });
+            try{
+                let quill = new Quill('#quillEditor', {
+                    modules: {
+                      syntax: true,
+                      toolbar: '#quillToolbar'
+                    },
+                    placeholder: 'Compose an epic...',
+                    theme: 'snow'
+                });
+
+            }catch(e){
+
+            }
+
+            document.querySelector("#formpopup").addEventListener("click", ()=>{
+                document.querySelector("#jobForm").classList.remove('deactivate');
+                document.querySelector("#formpopup").style.display = 'none';
+            })
+            document.querySelector("#removeForm").addEventListener("click", ()=>{
+                document.querySelector("#jobForm").classList.add('deactivate');
+                document.querySelector("#formpopup").style.display = 'block';
+            })
         }
     </script>
 </body>

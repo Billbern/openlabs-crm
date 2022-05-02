@@ -261,6 +261,10 @@ body .dash-head{
     left: 16.5%;
 }
 
+.dash-main .dash-body .job-form.deactivate{
+    display: none;
+}
+
 .dash-body .job-form  form > div{
     min-height: 260px;
     border-radius: 4px;
