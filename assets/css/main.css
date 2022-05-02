@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400|PT+Sans:600');
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400|PT+Sans:600'); */
 
 *{
     margin: 0;
@@ -203,6 +203,7 @@ body .dash-head{
     position: absolute;
     bottom: -46px;
     right: -12px;
+    z-index: 8;
 }
 
 
@@ -252,10 +253,89 @@ body .dash-head{
 }
 
 .dash-main .dash-body .job-form{
-    width: 100%;
+    width: 67%;
     height: 90%;
     position: absolute;
-    background-color: white;
-    bottom: 24px;
-    left: 0;
+    background-color: #f5f5f7;
+    bottom: 8px;
+    left: 16.5%;
+}
+
+.dash-body .job-form  form > div{
+    min-height: 260px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    background-color: #fff;
+    padding: 4px 24px 16px 24px;
+}
+
+.dash-body .job-form  form .bi-form input:not(input[type=checkbox]){
+    width: 100%;
+    border: none;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.job-form  form .bi-form input:not(input[type=checkbox]):focus{
+    outline: none;
+}
+
+.job-form  form .bi-loc > div {
+    gap: 0 32px;
+    display: flex;
+    align-items: center;
+}
+
+.job-form  form .bi-loc > div:last-child{
+    display: flex;
+    align-items: flex-start;
+}
+
+.dash-body .job-form  form .po-form{
+    max-height: 466px;
+    overflow-y: hidden;
+}
+
+.job-form  form .po-form > div{
+    min-height: 82px;
+    max-height: 288px;
+}
+
+form .po-form > div{
+    height: 100%;
+}
+
+form .po-form .ql-container{
+    height: calc( 100% - 46px );
+}
+
+.po-form .ql-container .ql-editor{
+    height: 100%;
+
+}
+
+
+.job-form  form input[type=submit],
+.job-form  form input[type=button]{
+    border: none;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 48px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.35);
+}
+
+.job-form  form input[type=button]{
+    background-color: red;
+    left: 183px;
+}
+
+.job-form  form input[type=submit]{
+    background-color: #0060ac;
+    right: 157px;
 }
