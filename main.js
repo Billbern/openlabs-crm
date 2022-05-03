@@ -1,5 +1,7 @@
 // import modules
+require('dotenv').config()
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 
 // initialise express and set port
@@ -10,10 +12,23 @@ const port = process.env.PORT || 3000
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '/assets')));
 
+// importing the various models
+const Users = require("./models/user");
+const Roles = require("./models/role");
+
+// try creating database connection
+try {
+    mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true}) 
+} catch (error) {
+    console.log(error)
+}
+
+
 // import various routes
 const auth = require('./routes/auth');
 const student = require("./routes/student");
 const company = require("./routes/company");
+const { info } = require('console');
 
 // use impoted routes
 app.use('/auth', auth);
