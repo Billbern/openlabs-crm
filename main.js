@@ -28,7 +28,6 @@ try {
 const auth = require('./routes/auth');
 const student = require("./routes/student");
 const company = require("./routes/company");
-const { info } = require('console');
 
 // use impoted routes
 app.use('/auth', auth);
