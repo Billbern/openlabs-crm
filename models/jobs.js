@@ -26,8 +26,12 @@ const jobSchema = new Schema({
         type:String,
         required: true,
     },
+    jobtype:{
+        type:String,
+    },
     content: {
         type: String,
+        default: 'on-site',
     },
     user: { 
         type: ObjectId, 
