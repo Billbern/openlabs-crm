@@ -7,7 +7,7 @@ const ObjectIdSchema = Schema.ObjectId;
 const userSchema = new Schema({
     _id: {
         type:ObjectIdSchema, 
-        default: new ObjectId()
+        default: ObjectId
     },
     username: {
         type:String,
@@ -17,7 +17,7 @@ const userSchema = new Schema({
         type:String,
         required: true,
     },
-    roles: { 
+    role: { 
         type: ObjectId, 
         ref : 'Roles' 
     },

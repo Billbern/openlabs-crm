@@ -227,3 +227,44 @@ body .auth-main{
     transition: all 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
+.auth-image > div .auth-role{
+    margin-bottom: 16px;
+}
+
+.auth-image > div .auth-role > div{
+    gap: 0 24px;
+    display: flex;
+    color: #555;
+}
+
+.auth-image > div .auth-role > div > div {
+    gap: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.auth-image .auth-role > div input {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.auth-image .auth-role > div label{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.auth-image .auth-role > div input:checked ~ label {
+    background-color: #0060ac;
+    border-color: #0060ac;
+    color: #fff;
+}

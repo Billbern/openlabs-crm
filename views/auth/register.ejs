@@ -23,36 +23,29 @@
                         <div>
                             <input type="password" name="confirm" id="conpwd" placeholder="confirm password" required>
                         </div>
-                        <div>
-                            <select name="role" id="roleSelect">
-                                <option value="null">select one option</option>
-                                <option value="student">student</option>
-                                <option value="company">company</option>
-                            </select>
+                        <div class="auth-role">
+                            <div>
+                                <p>Register as</p>
+                                <div>
+                                    <input type="radio" value="student" name="role" id="studs">
+                                    <label for="stud">Student</label>
+                                </div>
+                                <div>
+                                    <input type="radio" value="company" name="role" id="panies">
+                                    <label for="comp">Company</label>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <div id="notice">
                             
                             </div>
-                            <div style="display: none;" id="panies">
-                                <div>
-                                    <input type="text" name="compname" id="paniesname" placeholder="company name">
-                                </div>
-                                <div>
-                                    <input type="text" name="compmail" id="paniesmail" placeholder="company email">
-                                </div>
-                            </div>
-                            <div style="display: none;" id="studs">
-                                <div>
-                                    <input type="text" name="stdcourse" id="stdprogram" placeholder="program">
-                                </div>
-                                <div>
-                                    <input type="text" name="stdmail" id="stdmail" placeholder="student email">
-                                </div>
+                            <div id="authOptions">
+                                
                             </div>
                         </div>
                         <div>
-                            <input type="submit" name="btnlogin" value="Signup" id="">
+                            <input type="submit" value="Signup">
                         </div>
                         <div>
                             <p class="text_small">

@@ -1,0 +1,43 @@
+<% if (role === 'student') { %>
+    <script src="/js/menu.js"></script>
+
+<% }else if  (role === 'company') { %>
+    <script src="/js/quill.min.js"></script>
+
+    <script>
+        document.body.onload = () => {
+            
+            const menuBtn = document.querySelector('#headMenuBtn');
+            const menuBox = document.querySelector('#headMenu');
+    
+            try{
+                let quill = new Quill('#quillEditor', {
+                    modules: {
+                        syntax: true,
+                        toolbar: '#quillToolbar'
+                    },
+                    placeholder: 'Compose an epic...',
+                    theme: 'snow'
+                });
+                
+            }catch(e){
+                
+            }
+    
+    
+            menuBtn.addEventListener('click', ()=>{
+                console.log('menu button clicked');
+                menuBox.classList.toggle('show');
+            })
+            
+            document.querySelector("#formpopup").addEventListener("click", ()=>{
+                document.querySelector("#jobForm").classList.remove('deactivate');
+                document.querySelector("#formpopup").parentNode.style.display = 'none';
+            })
+            document.querySelector("#removeForm").addEventListener("click", ()=>{
+                document.querySelector("#jobForm").classList.add('deactivate');
+                document.querySelector("#formpopup").parentNode.style.display = 'block';
+            })
+        }
+    </script>
+<% } %>

@@ -102,6 +102,7 @@ body .dash-head{
 
 .dash-head .head-inner .head-icons{
     display: flex;
+    position: relative;
     justify-content: flex-end;
 }
 
@@ -116,6 +117,43 @@ body .dash-head{
     background-color: white;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.head-inner .head-icons > div{
+    display: none;
+    transition: display 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.35);
+    background-color: #fff;
+    position: absolute;
+    border-radius: 4px;
+    padding: 4px 16px;
+    z-index: 10;
+    top: 32px;
+    right: 0;
+}
+
+.head-inner .head-icons > div.show{
+    display: block;
+}
+
+.head-icons > div ul{
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.head-icons > div ul > li{
+    padding: 8px;
+}
+
+.head-icons > div ul li:not(:last-child){
+    border-bottom: 1px solid rgba(85, 85, 85, 0.35);
+}
+
+.head-icons > div li a{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .dash-main .dash-body{
@@ -182,7 +220,6 @@ body .dash-head{
     display: flex;
     position: relative;
     align-items: center;
-    padding-right: 48px;
 }
 
 .body-head .btn-area button{
@@ -194,7 +231,12 @@ body .dash-head{
     background-color: transparent;
 }
 
-.body-head .btn-area button:last-child{
+.body-head .btn-area > div {
+    position: relative;
+    margin-left: 48px;
+}
+
+.body-head .btn-area button.lastbtn{
     width: 48px;
     height: 48px;
     color: #fff;
@@ -248,7 +290,7 @@ body .dash-head{
 }
 
 .body-main .jobs-area > div{
-    height: 40%;
+    height: 100%;
     overflow-y: scroll;
     scrollbar-width: thin;
 }

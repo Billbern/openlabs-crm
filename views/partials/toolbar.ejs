@@ -1,0 +1,31 @@
+<div class="body-head container">
+    <div>
+        <div class="search-area">
+            <label for="searchData">
+                <svg  height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.95 487.95"><path fill="#555" d="M481.8 453l-140-140.1c27.6-33.1 44.2-75.4 44.2-121.6C386 85.9 299.5.2 193.1.2S0 86 0 191.4s86.5 191.1 192.9 191.1c45.2 0 86.8-15.5 119.8-41.4l140.5 140.5c8.2 8.2 20.4 8.2 28.6 0 8.2-8.2 8.2-20.4 0-28.6zM41 191.4c0-82.8 68.2-150.1 151.9-150.1s151.9 67.3 151.9 150.1-68.2 150.1-151.9 150.1S41 274.1 41 191.4z"/></svg>
+            </label>
+            <input type="search" name="datasearch" id="searchData" placeholder="Search">
+        </div>
+        <div class="btn-area">
+            <button>
+                All locations 
+                <span>
+                    <svg width="16"  viewBox="0 0 48 24" xmlns="http://www.w3.org/2000/svg"><path d="M48 0H0l12 12 12 12 12-12z" fill="#f37122" paint-order="stroke fill markers"/></svg>
+                </span>
+            </button>
+            <button>
+                Active
+                <span>
+                    <svg width="16"  viewBox="0 0 48 24" xmlns="http://www.w3.org/2000/svg"><path d="M48 0H0l12 12 12 12 12-12z" fill="#f37122" paint-order="stroke fill markers"/></svg>
+                </span>
+            </button>
+            <% if (role === 'company') { %>
+                <div>
+                    <button class="lastbtn" id="formpopup">
+                        <svg  height="16" fill="#fff" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M.044 8.002a.838.839 89.192 01.84-.84H7.16L7.16.887a.84.84 89.192 011.679 0V7.16l6.278-.002a.84.84 89.192 010 1.678H8.84l.003 6.276a.84.84 89.192 01-1.68 0V8.839l-6.278.003a.838.839 89.192 01-.84-.839z"/></svg>
+                    </button>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

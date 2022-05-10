@@ -7,11 +7,12 @@ const ObjectIdSchema = Schema.ObjectId;
 const roleSchema = new Schema({
     _id: {
         type: ObjectIdSchema, 
-        default: new ObjectId()
+        default: ObjectId
     },
     name: {
         type:String,
         required: true,
+        unique: true
     }
 
 });
