@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const bcrypt = require("bcrypt");
 const passport = require("passport");
 const session = require("express-session");
 const mongoStore = require('connect-mongo');
@@ -27,7 +28,12 @@ mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTo
 
 mongoose.connection.on('open', async ()=>{
     console.info("Hurray database connected");
+
+    // check roles and users table
     const userRoles = await Roles.find({});
+    const adminUser = await Users.find({});
+
+    // create various roles if roles table is empty
     if(userRoles.length === 0){
         Roles.create({name: 'student'}, (err, result)=>{
             if(result) return;
@@ -41,6 +47,30 @@ mongoose.connection.on('open', async ()=>{
             console.error(err)
         });
     }
+
+    // create admin user if users table is empty
+    if(adminUser.length === 0){
+        bcrypt.hash('admin4321', 10, (err, hash)=>{
+            if(err){
+                console.log(err)
+            }else{
+                Roles.findOne({name: 'admin'}, (err, result)=>{
+                    if(err){
+                        console.error(err)
+                    }else{
+                        const newUser = new Users({username: "admin", password: hash, role: result.id})
+                        newUser.save((errr)=>{
+                            if(errr)console.error(errr);
+                            return;
+                        })
+                    }
+                })
+                
+            }
+        })
+    }
+
+
 })
 
 
