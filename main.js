@@ -70,7 +70,6 @@ mongoose.connection.on('open', async ()=>{
         })
     }
 
-
 })
 
 
@@ -118,7 +117,7 @@ app.get('/logout', (req, res)=>{
 })
 
 app.get('/', checkAuth, (req, res)=>{
-    res.redirect("/auth/login")
+    res.redirect("/auth/login") 
 })
 
 // check user authentication and direct the homepage/login
