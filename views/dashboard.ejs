@@ -21,31 +21,31 @@
                 <!-- Form for entering job details -->
                 <div class="job-form deactivate" id="jobForm">
                     <div>
-                        <form action="" method="post">
+                        <form action="/user/jobs" method="post">
                             <div class="bi-form">
                                 <h5>Basic Information</h5>
                                 <div class="bi-title">
-                                    <input type="text" name="" id="" placeholder="Job title">
+                                    <input type="text" name="title" id="" placeholder="Job title" required>
                                 </div>
                                 <div class="bi-dept">
-                                    <input type="text" name="" id="" placeholder="department">
+                                    <input type="text" name="department" id="" placeholder="department" required>
                                 </div>
                                 <div class="bi-loc">
                                     <div>
                                         <div>
-                                            <input type="text" name=" " id="region" placeholder="region">
+                                            <input type="text" name="region" id="region" placeholder="region" required>
                                         </div>
                                         <div>
-                                            <input type="text" name="" id="city" placeholder="city">
+                                            <input type="text" name="city" id="city" placeholder="city" required>
                                         </div>
                                         <div>
-                                            <input type="checkbox" name="" id="remote" placeholder="remote">
+                                            <input type="checkbox" name="remote" id="remote" placeholder="remote">
                                             <label for="">Remote</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="bi-tags">
-                                    <input type="text" name="" id="tags" placeholder="enter tag">
+                                    <input type="text" name="tags" id="tags" placeholder="enter tag" required>
                                 </div>
                             </div>
                             <div class="po-form">
@@ -122,8 +122,9 @@
                                     </div>                                
                                 </div>
                             </div>
+                            <textarea name="content" id="quillContentHolder" style="display:none;" cols="30" rows="10"></textarea>
                             <input class="cancel-btn" type="button" value="cancel" id="removeForm">
-                            <input class="submit-btn" type="button" value="Create Job">
+                            <input class="submit-btn" type="submit" value="Create Job">
                         </form>
                     </div>
                 </div>

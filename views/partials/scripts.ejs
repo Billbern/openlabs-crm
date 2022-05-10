@@ -7,8 +7,13 @@
     <script>
         document.body.onload = () => {
             
-            const menuBtn = document.querySelector('#headMenuBtn');
+            const txtMenu = document.querySelector("#textMenu");
             const menuBox = document.querySelector('#headMenu');
+            const editor = document.querySelector("#quillEditor");
+            const menuBtn = document.querySelector('#headMenuBtn');
+            const txtMenuBtn = document.querySelector("#textMenuBtn");
+            const quillContent = document.querySelector("#quillContentHolder");
+
     
             try{
                 let quill = new Quill('#quillEditor', {
@@ -23,11 +28,28 @@
             }catch(e){
                 
             }
-    
+
+            const cbFunc = (mutationsList)=>{
+                let data;
+                for(let mutation of mutationsList){
+                    if(mutation.type === 'childList'){
+                        data = editor.firstElementChild.innerHTML;
+                    }else{
+                        data = editor.firstElementChild.innerHTML;
+                    }
+                }
+                quillContent.value = data;
+            }
+            const observer = new MutationObserver(cbFunc);
+            observer.observe(editor.firstElementChild, {childList: true, subtree: true, characterData: true})    
     
             menuBtn.addEventListener('click', ()=>{
                 console.log('menu button clicked');
                 menuBox.classList.toggle('show');
+            })
+
+            txtMenuBtn.addEventListener('click', ()=>{
+                txtMenu.classList.toggle('show');
             })
             
             document.querySelector("#formpopup").addEventListener("click", ()=>{

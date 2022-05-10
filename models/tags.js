@@ -4,19 +4,20 @@ const ObjectId = mongoose.Types.ObjectId;
 const Schema = mongoose.Schema;
 const ObjectIdSchema = Schema.ObjectId;
 
-const feedbackSchema = new Schema({
+const tagSchema = new Schema({
     _id: {
         type:ObjectIdSchema, 
         default: ObjectId
     },
-    details: {
+    name: {
         type:String,
+        required: true,
     },
-    user: { 
-        type: ObjectId, 
-        ref : 'Users' 
-    },
-
+    jobs: [{
+        type: ObjectId,
+        ref: 'Jobs',
+    }],
+    
 });
 
-module.exports = mongoose.model('Feedback', feedbackSchema);
+module.exports = mongoose.model('Tags', tagSchema);

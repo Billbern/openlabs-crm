@@ -17,6 +17,8 @@ const appusers = require("./routes/user");
 // importing the various models
 const Users = require("./models/user");
 const Roles = require("./models/role");
+// const Jobs = require("./models/jobs");
+// const Tags = require("./models/tags");
 
 
 // try creating database connection
@@ -26,50 +28,17 @@ mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTo
     }
 })
 
+
+// initialise database on connection open
+
+const dbinit = require("./config/dbinit"); 
 mongoose.connection.on('open', async ()=>{
     console.info("Hurray database connected");
-
-    // check roles and users table
-    const userRoles = await Roles.find({});
-    const adminUser = await Users.find({});
-
-    // create various roles if roles table is empty
-    if(userRoles.length === 0){
-        Roles.create({name: 'student'}, (err, result)=>{
-            if(result) return;
-            console.error(err)
-        });
-        Roles.create({name: 'company'}, (err, result)=>{
-            if(result) return;
-            console.error(err)
-        });Roles.create({name: 'admin'}, (err, result)=>{
-            if(result) return;
-            console.error(err)
-        });
+    try {
+        await dbinit(bcrypt);
+    } catch (error) {
+        console.error(error)
     }
-
-    // create admin user if users table is empty
-    if(adminUser.length === 0){
-        bcrypt.hash('admin4321', 10, (err, hash)=>{
-            if(err){
-                console.log(err)
-            }else{
-                Roles.findOne({name: 'admin'}, (err, result)=>{
-                    if(err){
-                        console.error(err)
-                    }else{
-                        const newUser = new Users({username: "admin", password: hash, role: result.id})
-                        newUser.save((errr)=>{
-                            if(errr)console.error(errr);
-                            return;
-                        })
-                    }
-                })
-                
-            }
-        })
-    }
-
 })
 
 
