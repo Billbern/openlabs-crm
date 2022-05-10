@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const ObjectId = mongoose.Types.ObjectId;
+const DateObj = mongoose.Schema.Types.Date;
 const Schema = mongoose.Schema;
 const ObjectIdSchema = Schema.ObjectId;
 
@@ -40,6 +41,11 @@ const jobSchema = new Schema({
         type: ObjectId,
         ref: 'Tags',
     }],
+    createdAt: {
+        type: DateObj,
+        default: Date,
+
+    }
     
 });
 
