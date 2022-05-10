@@ -327,7 +327,7 @@ body .dash-head{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: #ccc;
     align-self: stretch;
 }
 

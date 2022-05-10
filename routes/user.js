@@ -35,6 +35,9 @@ router.get('/applications/:username', (req, res)=>{
 })
 
 router.post('/jobs', (req, res)=>{
+    console.log('\n');
+    console.log(req.body);
+    console.log('\n');
     let usersession = req.session.passport.user;
     res.redirect(`/user/${usersession.name}`)
 })
