@@ -1,24 +1,49 @@
 <div class="body-main container">
     <div class="jobs-area">
         <div>
-            <div class="job-cards">Python developer intern <button>apply</button></div>
-            <div class="job-cards">Network Administrator intern <button>apply</button></div>
-            <div class="job-cards">Software developement intern <button>apply</button></div>
-            <div class="job-cards">System Administration <button>apply</button></div>
-            <div class="job-cards">Cyber Security Analyst intern <button>apply</button></div>
-            <div class="job-cards">Business Analyst intern <button>apply</button></div>
-            <div class="job-cards">Python developer intern <button>apply</button></div>
-            <div class="job-cards">Network Administrator intern <button>apply</button></div>
-            <div class="job-cards">Software developement intern <button>apply</button></div>
-            <div class="job-cards">System Administration <button>apply</button></div>
-            <div class="job-cards">Cyber Security Analyst intern <button>apply</button></div>
-            <div class="job-cards">Python developer intern <button>apply</button></div>
-            <div class="job-cards">Network Administrator intern <button>apply</button></div>
-            <div class="job-cards">Software developement intern <button>apply</button></div>
-            <div class="job-cards">System Administration <button>apply</button></div>
-            <div class="job-cards">Cyber Security Analyst intern <button>apply</button></div>
-            <div class="job-cards">System Administration <button>apply</button></div>
+            <% if (data) { %>
+                <% if ( data.length > 0) { %>
 
+                    <% data.forEach(job => { %>
+                        <div class="job-cards">
+                            <div>
+                                <img width="128" src="/img/learning/circle.png" alt="company logo">
+                            </div>
+                            <div class="cards-body">
+                                <h6>
+                                   <%= job.title %> 
+                                </h6>
+                                <div class="text_small">
+                                   <%= job.city %>  <span class="dot"></span> <%= job.region %> <span class="dot"></span> Ghana
+                                </div>
+                                <div class="text_small">
+                                    <%- job.content.slice(0, 199) %>...
+                                </div>
+                                <div>
+                                    <span class="tag text_small">python</span> <span class="tag text_small">sql</span> <span class="tag text_small">pyqt5</span>
+                                </div>
+                                <div class="text_small">
+                                    <span><%= job.createdAt %></span>
+    
+                                    <button data-key="<%= job.id.slice(0, 5) %>">Quick Apply</button>
+                                </div>
+                            </div>
+                            <div class="cards-options">
+                            </div>
+                        </div>
+                    <% }) %>
+    
+                 
+                <% }else{ %>
+                    <div style="position: absolute; color: #555; top: 50%; left: 45%;">
+                        There are no available jobs at the moment
+                    </div>
+                <% } %>
+            <% }else{ %>
+                <div style="position: absolute; color: #555; top: 50%; left: 45%;">
+                    There are no available jobs at the moment
+                </div>
+            <% } %>
         </div>
     </div>
 </div>

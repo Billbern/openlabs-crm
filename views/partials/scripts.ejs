@@ -6,13 +6,24 @@
 
     <script>
         document.body.onload = () => {
+
+            let editor;
+            let menuBox;
+            let menuBtn;
+            let quillContent;
             
-            const txtMenu = document.querySelector("#textMenu");
-            const menuBox = document.querySelector('#headMenu');
-            const editor = document.querySelector("#quillEditor");
-            const menuBtn = document.querySelector('#headMenuBtn');
-            const txtMenuBtn = document.querySelector("#textMenuBtn");
-            const quillContent = document.querySelector("#quillContentHolder");
+            
+            try{
+                // txtMenu = document.querySelector("#textMenu");
+                // txtMenuBtn = document.querySelector("#textMenuBtn");
+
+                menuBox = document.querySelector('#headMenu');
+                editor = document.querySelector("#quillEditor");
+                menuBtn = document.querySelector('#headMenuBtn');
+                quillContent = document.querySelector("#quillContentHolder");
+            }catch(e){
+
+            }
 
     
             try{
@@ -48,14 +59,16 @@
                 menuBox.classList.toggle('show');
             })
 
-            txtMenuBtn.addEventListener('click', ()=>{
-                txtMenu.classList.toggle('show');
-            })
+            //txtMenuBtn.addEventListener('click', ()=>{
+            //    txtMenu.classList.toggle('show');
+            //})
             
             document.querySelector("#formpopup").addEventListener("click", ()=>{
+                console.log('add form button clicked');
                 document.querySelector("#jobForm").classList.remove('deactivate');
                 document.querySelector("#formpopup").parentNode.style.display = 'none';
             })
+            
             document.querySelector("#removeForm").addEventListener("click", ()=>{
                 document.querySelector("#jobForm").classList.add('deactivate');
                 document.querySelector("#formpopup").parentNode.style.display = 'block';

@@ -6,12 +6,15 @@ router.use(express.urlencoded({ extended: false }));
 
 const Jobs = require('../models/jobs');
 
+// handle dashboard requests from users
 router.get('/:username', async (req, res)=>{
     let usersess = req.session.passport.user;
     let data = [];
     try {
         if (usersess.role === 'company'){
-            data = await Jobs.find({user: usersess.id})
+            data = await Jobs.find({user: usersess.id});
+        }else if (usersess.role === 'student'){
+            data = await Jobs.find({});
         }
     } catch (error) {
         
@@ -19,31 +22,37 @@ router.get('/:username', async (req, res)=>{
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role, data: data});
 })
 
+// handle user chats
 router.get('/chat/:username', (req, res)=>{
     let usersess = req.session.passport.user;
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role});
 })
 
+// 
 router.get('/applicants/:username', (req, res)=>{
     let usersess = req.session.passport.user;
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role});
 })
 
+// 
 router.get('/profile/:username', (req, res)=>{
     let usersess = req.session.passport.user;
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role});
 })
 
+// 
 router.get('/settings/:username', (req, res)=>{
     let usersess = req.session.passport.user;
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role});
 })
 
+// 
 router.get('/applications/:username', (req, res)=>{
     let usersess = req.session.passport.user;
     res.render('dashboard', {title: '', username: usersess.name, role: usersess.role});
 })
 
+// 
 router.post('/jobs', (req, res)=>{
     const job = req.body;
     let usersess = req.session.passport.user;

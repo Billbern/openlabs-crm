@@ -1,7 +1,7 @@
 <div class="body-main container">
     <div class="jobs-area">
         <div>
-            <% if ( data ) { %>
+            <% if ( data.length > 0 ) { %>
                 <% data.forEach(job => { %>
                     <div class="job-cards">
                         <div>
@@ -37,74 +37,9 @@
                         </div>
                     </div>
                 <% }) %>
-            <% } %>
-            <!-- <div class="job-cards">
-                <div>
-                    <img width="128" src="/img/learning/circle.png" alt="company logo">
-                </div>
-                <div class="cards-body">
-                    <h6>
-                        Python developer intern
-                    </h6>
-                    <div class="text_small">
-                        Western region <span class="dot"></span> Takoradi <span class="dot"></span> Ghana
-                    </div>
-                    <p class="text_small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maxime unde cum ea dolore? Quod laboriosam neque eos ut, soluta omnis eaque aliquid atque, est consequuntur animi expedita? Quis, in.
-                    </p>
-                    <div>
-                        <span class="tag text_small">python</span> <span class="tag text_small">sql</span> <span class="tag text_small">pyqt5</span>
-                    </div>
-                    <div class="text_small">
-                        2 days ago
-                    </div>
-                </div>
-                <div class="cards-options">
-                    <span id="textMenuBtn">
-                        <svg width="16" height="16" viewBox="0 0 290 290" xmlns="http://www.w3.org/2000/svg"><path d="M180 255c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35zM180 35c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35zM180 145c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35z"/></svg>
-                    </span>
-                    <div id="textMenu">
-                        <ul>
-                            <li>edit</li>
-                            <li>delete</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="job-cards">
-                <div>
-                    <img width="128" src="/img/learning/circle.png" alt="company logo">
-                </div>
-                <div class="cards-body">
-                    <h6>
-                        Python developer intern
-                    </h6>
-                    <div class="text_small">
-                        Western region <span class="dot"></span> Takoradi <span class="dot"></span> Ghana
-                    </div>
-                    <p class="text_small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maxime unde cum ea dolore? Quod laboriosam neque eos ut, soluta omnis eaque aliquid atque, est consequuntur animi expedita? Quis, in.
-                    </p>
-                    <div>
-                        <span class="tag text_small">python</span> <span class="tag text_small">sql</span> <span class="tag text_small">pyqt5</span>
-                    </div>
-                    <div class="text_small">
-                        2 days ago
-                    </div>
-                </div>
-                <div class="cards-options">
-                    <span id="textMenuBtn">
-                        <svg width="16" height="16" viewBox="0 0 290 290" xmlns="http://www.w3.org/2000/svg"><path d="M180 255c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35zM180 35c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35zM180 145c0-19.299-15.701-35-35-35s-35 15.701-35 35 15.701 35 35 35 35-15.701 35-35z"/></svg>
-                    </span>
-                    <div id="textMenu">
-                        <ul>
-                            <li>edit</li>
-                            <li>delete</li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-        
+            <% } else { %>
+                <div style="position: absolute; color: #555; top: 50%; left: 45%;">No jobs added yet</div>
+            <% } %>        
         </div>
     </div>
 </div>

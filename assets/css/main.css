@@ -245,6 +245,7 @@ body .dash-head{
     border-radius: 50%;
     background-color: #f37122;
     position: absolute;
+    cursor: pointer;
     bottom: -46px;
     right: -12px;
     z-index: 8;
@@ -328,7 +329,9 @@ body .dash-head{
     align-items: center;
     justify-content: center;
     background-color: #ccc;
-    align-self: stretch;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
 }
 
 .job-cards .cards-body > div {
@@ -341,7 +344,7 @@ body .dash-head{
 .job-cards .cards-body > div:last-child{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .job-cards .cards-body > div span.dot {
@@ -355,12 +358,12 @@ body .dash-head{
 .job-cards .cards-body > div span.tag {
     color: #fff;
     display: flex;
-    min-width: 64px;
-    padding: 4px 8px;
+    min-width: 48px;
+    padding: 2px 4px;
     border-radius: 4px;
     align-items: center;
     justify-content: center;
-    background-color: #0060ac;
+    background-color: #44a0eb;
     cursor: pointer;
 }
 
@@ -416,6 +419,19 @@ body .dash-head{
 
 .cards-options > div ul li:last-child{
     border-bottom: none;
+}
+
+.job-cards .cards-body > div:last-child button{
+    color: #fff;
+    min-width: 96px;
+    min-height: 32px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    background-color: #f37122;
+    box-shadow: 0 1px 2px 1px rgba(85,85,85,0.35);
+    cursor: pointer;
+    border: none;
 }
 
 .dash-main .dash-body .job-form{
