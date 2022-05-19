@@ -2,7 +2,7 @@
     <div class="head-nav">
         <% if (role === 'student') { %>
             <div>
-                <a href="/user/ <%= username %> ">
+                <a href="/user/<%= username %>">
                     <div>
                         <span>
                             <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -11,26 +11,12 @@
                                 </g>
                             </svg>
                         </span>
-                        Openings
+                        Job Openings
                     </div>
                 </a>
             </div>
             <div>
-                <a href="/user/applications/ <%= username %> ">
-                    <div>
-                        <span>
-                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#f37122"><path d="M46.015 40.219V13.54c-1.218 1.41-3.06 2.687-5.465 3.76-3.91 1.748-8.948 2.8-14.36 3.025v1.298c0 .737-.598 1.335-1.335 1.335h-1.71a1.336 1.336 0 01-1.335-1.335V20.33c-5.417-.224-10.45-1.277-14.36-3.024-2.404-1.074-4.247-2.35-5.465-3.76v26.678c0 .737.598 1.336 1.335 1.336h41.365a1.343 1.343 0 001.33-1.341z"/>
-                                    <path d="M29.481 6.44H18.508a4.008 4.008 0 00-4.006 4.007v1.501H2.765c.192.272.417.545.673.817 1.084 1.144 2.65 2.18 4.664 3.077 4.23 1.892 9.877 2.933 15.898 2.933s11.662-1.041 15.898-2.933c2.01-.897 3.58-1.933 4.664-3.077.257-.267.481-.54.673-.817H33.488v-1.501A4.012 4.012 0 0029.48 6.44zm-12.308 5.508v-1.501c0-.737.598-1.336 1.335-1.336h10.973c.737 0 1.336.599 1.336 1.336v1.501z"/>
-                                </g>
-                            </svg>
-                        </span>
-                        Applications
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="/user/chat/<%= username %>">
+                <a href="/user/applications/<%= username %> ">
                     <div>
                         <span>
                             <svg width="24" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
@@ -41,13 +27,13 @@
                                 </g>
                             </svg>
                         </span>
-                        Chats
+                        Applied Jobs
                     </div>
                 </a>
             </div>
         <% }else if(role === 'company'){ %>
             <div>
-                <a href="/user/<%= username %> ">
+                <a href="/user/<%= username %>">
                     <div>
                         <span>
                             <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +47,7 @@
                 </a>
             </div>
             <div>
-                <a href="/user/applicants/ <%= username %> ">
+                <a href="/user/applicants/<%= username %>">
                     <div>
                         <span>
                             <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">

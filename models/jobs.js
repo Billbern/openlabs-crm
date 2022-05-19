@@ -48,7 +48,6 @@ const jobSchema = new Schema({
     createdAt: {
         type: DateObj,
         default: Date,
-
     }
     
 });

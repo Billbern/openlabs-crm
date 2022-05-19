@@ -4,9 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const moment = require('moment');
 const passport = require("passport");
 const session = require("express-session");
 const mongoStore = require('connect-mongo');
+const flash = require('express-flash');
 
 
 // import various routes
@@ -66,7 +68,8 @@ app.use(session({
         maxAge: 1 * 24 * 60 * 60 * 1000
     }
 }))
-
+app.use(flash());
+app.locals.moment = moment;
 
 // import and use various routes
 app.use('/auth', checkAuth, authent);
@@ -105,6 +108,7 @@ function checkNotAuth(req, res, next){
     }
     return res.redirect('/auth/login')
 }
+
 
 // all other routes
 app.get("*", (req, res)=>{

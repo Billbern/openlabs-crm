@@ -1,10 +1,10 @@
 <div class="body-main container">
     <div class="jobs-area">
         <div>
-            <% if (data) { %>
-                <% if ( data.length > 0) { %>
+            <% if (applied) { %>
+                <% if ( applied.length > 0) { %>
 
-                    <% data.forEach(job => { %>
+                    <% applied.forEach(job => { %>
                         <div class="job-cards">
                             <div>
                                 <img width="128" src="/img/learning/circle.png" alt="company logo">
@@ -24,8 +24,6 @@
                                 </div>
                                 <div class="text_small">
                                     <span><%= moment(job.createdAt).fromNow() %></span>
-    
-                                    <button data-key="<%= job.id.slice(0, 5) %>">Quick Apply</button>
                                 </div>
                             </div>
                             <div class="cards-options">
@@ -36,12 +34,12 @@
                  
                 <% }else{ %>
                     <div style="position: absolute; color: #555; top: 50%; left: 45%;">
-                        There are no available jobs at the moment
+                        you have not applied for any job yet
                     </div>
                 <% } %>
             <% }else{ %>
                 <div style="position: absolute; color: #555; top: 50%; left: 45%;">
-                    There are no available jobs at the moment
+                    you have not applied for any job yet
                 </div>
             <% } %>
         </div>

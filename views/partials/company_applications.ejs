@@ -1,8 +1,8 @@
 <div class="body-main container">
     <div class="jobs-area">
         <div>
-            <% if ( data.length > 0 ) { %>
-                <% data.forEach(job => { %>
+            <% if ( applicants.length > 0 ) { %>
+                <% applicants.forEach(job => { %>
                     <div class="job-cards">
                         <div>
                             <img width="128" src="/img/learning/circle.png" alt="company logo">
@@ -38,7 +38,7 @@
                     </div>
                 <% }) %>
             <% } else { %>
-                <div style="position: absolute; color: #555; top: 50%; left: 45%;">No jobs added yet</div>
+                <div style="position: absolute; color: #555; top: 50%; left: 45%;">No applicants yet</div>
             <% } %>        
         </div>
     </div>
